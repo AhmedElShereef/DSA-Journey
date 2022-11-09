@@ -1,5 +1,5 @@
 using namespace std;
-
+#include<math.h>
 #include<iostream>
 
 
@@ -25,7 +25,7 @@ int sumOfN_4(int n) {
 // (N) WORST
 // (N/2) -> (N)   AVERAGE
 // (1) BEST 
-int arrSum(int arr[],int sz) {
+int arrSum(int arr[],int sz) { 
     if(sz % 2 == 0) return 0;   // BEST
 
     int res { };
@@ -83,8 +83,9 @@ cout << search( arr,5 , 5) << endl;
 
 ////////////////////////////////////////////////////////////////////////////
 // Loops
-
+/*
 int n , c; cin >> n >> c;
+
 
 // C 
 // O(N/C) -> c constant -> O(N)
@@ -99,9 +100,47 @@ for(int i = n; i >= 0; i -= c) {
 }
 cout << endl;
 ////////////////////////////////////////////////////////////////////////////
+// Logarithmic
 
+// Log(n)
 
+// decreses (*c) each iteration
+for(int i = 1; i < n; i *= c) {
+    cout << i << " ";
+}
+cout << endl;
+////////////////////////////////////////////////////////////////////////////
+// Log(n)
 
+// decreases (*c) 
+for(int i = n; i > 1; i /= c) {
+    cout << i << " ";
+}
+cout << endl;
+
+////////////////////////////////////////////////////////////////////////////
+// log(log(n))    fast as fuck
+for(int i = 2; i < n; i = pow(i,c)) {
+    cout << i << " ";
+}
+
+*/
+
+////////////////////////////////////////////////////////////////////////////
+// Multiple Loop 
+// add -> upper bound
+// nested ->  * multiply
+
+// O(N LogN)
+int n ;
+cin >> n ;
+for(int j = 0; j < n; j++)  // O(N)
+    for(int i = 1; i < n; i *= 2)  // O(LogN)
+     cout << i << " ";
+    
+// two inputs 
+// DIFFERENT INPUT-variable !!    
+// O(n logn) + o(m^2)  ->  O(n logn + m^2) 
 
 
 
